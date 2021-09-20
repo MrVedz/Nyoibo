@@ -159,7 +159,7 @@ async def meme(ctx, sub = "memes"):
 @client.command()
 async def emoji(ctx):
 	await ctx.send("😄")
-	await ctx.send("<:PepeChrist:882924532963348480>")
+	await ctx.send("<:PepeChrist:882924532963348480>")  #https://cdn.discordapp.com/emojis/882924532963348480.png
 	await ctx.send("")
 
 
