@@ -20,18 +20,18 @@ with open('filtered_words.txt') as filtered:
 
 
 #Reddit
-reddit = praw.Reddit(client_id = os.environ['r_cid'],
-					client_secret = os.environ['r_csecret'],
-					username = os.environ['r_uname'],
-					password = os.environ['r_pass'],
-					user_agent = os.environ['r_uagent'])
+reddit = praw.Reddit(client_id = os.environ['r_cid'],		#reddit client id
+		client_secret = os.environ['r_csecret'],	#reddit website application secret
+		username = os.environ['r_uname'],		#username of Reddit account
+		password = os.environ['r_pass'],		#password of the Reddit account
+		user_agent = os.environ['r_uagent'])		#just name your own agent(anything)
 
 
 
 #Bot Events
 @client.event
 async def on_ready():
-  print("Flying Nimbus is ready to strike under Nyoibo#3080")
+  print("Flying Nimbus is ready to strike under Nyoibo#3080")	#On ready message
 
 #Auto Moderation Event
 @client.event
@@ -40,14 +40,7 @@ async def on_message(msg):
         if word in msg.content.lower():
             await msg.delete()
             await msg.channel.send(f'{msg.author.mention}! Read the rules again!')
-            return 
-    if ":" == msg.content[0] and ":" == msg.content[-1]:
-    		emoji_name = msg.content[1:-1]
-    		for emoji in msg.guild.emojis:
-    			if emoji_name == emoji.name:
-    				await mag.channel.send(str(emoji))
-    				await msg.delete
-    				break
+            return
     await client.process_commands(msg)
 
 #Error Event
