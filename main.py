@@ -1,8 +1,8 @@
 import os
 import random
-import praw
-from dotenv import load_dotenv
-import discord
+import praw				#install using pip install praw
+from dotenv import load_dotenv		#install using pip install python-dotenv
+import discord				#install using pip install discord
 from discord.ext import commands
 
 
@@ -15,8 +15,8 @@ f = open("rules.txt","r")
 rules = f.readlines()
 muted_r = os.environ['muted_id']
 with open('filtered_words.txt') as filtered:
-    filtered = filtered.read().strip().lower().split(', ')
-
+    filtered = filtered.read().strip().lower().split(', ')	#reads all the words in lower case only 
+								#and seperates each word in the list
 
 
 #Reddit
