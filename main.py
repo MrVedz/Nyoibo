@@ -152,7 +152,10 @@ async def meme(ctx, sub = "memes"):
 	embed = discord.Embed(title =  title)
 	embed.set_image(url = image)
 	await ctx.send(embed = embed)
-
+	
+	
+	
+#Easter Egg :D
 @client.command()
 async def emoji(ctx):
 	await ctx.send("😄")
